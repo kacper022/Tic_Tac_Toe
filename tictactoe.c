@@ -2,6 +2,9 @@
 #include <stdio.h>
 
 #include "tictactoe.h"
+
+enum LINIE_WYGRANEJ{PION,POZIOM,LSKOS,PSKOS};
+
 void zapelnij(char plansza[3][3]){
     int i,j;
 
@@ -55,8 +58,16 @@ void rysujPlansze(char plansza[3][3]){
     printf("  -------\n");
 }
 
+int zajetoscPola(char plansza[3][3],int x, int y){
+    if(plansza[x][y]!=' '){
+        return 1;
+    }
+
+}
+
 /* TODO: rozpoznanie który znak wygra³ oraz rozpatrzenie potencjalnego remisu */
-void wygrana(plansza[3][3]){
-
-
+char wygrana(char plansza[3][3], const char gracz){
+    if(plansza[0][0]==gracz && plansza[0][1]==gracz && plansza[0][2]==gracz){
+        return gracz;
+    }
 }

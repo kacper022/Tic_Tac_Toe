@@ -37,6 +37,10 @@
 		<Unit filename="tictactoe.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="warunkiWygranej.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="warunkiWygranej.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
