@@ -62,7 +62,6 @@ int zajetoscPola(char plansza[3][3],int x, int y){
     if(plansza[x][y]!=' '){
         return 1;
     }
-
 }
 
 /* TODO: rozpoznanie który znak wygra³ oraz rozpatrzenie potencjalnego remisu */

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1544975881 source:c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\main.c
+1545070103 source:c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\main.c
 	<stdio.h>
 	<stdlib.h>
 	"tictactoe.h"
@@ -9,12 +9,12 @@
 	<stdio.h>
 	<stdlib.h>
 
-1544974902 source:c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\tictactoe.c
+1545069537 source:c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\tictactoe.c
 	<stdlib.h>
 	<stdio.h>
 	"tictactoe.h"
 
-1544974451 source:c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\warunkiwygranej.c
+1545070708 source:c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\warunkiwygranej.c
 	<stdio.h>
 	<stdlib.h>
 	"warunkiWygranej.h"

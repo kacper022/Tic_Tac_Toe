@@ -40,8 +40,24 @@ int main(void)
             scanf("%d", &y);
         }
 
-        while(zajetoscPola(plansza,x-1,y-1==1)){
-            break;
+        while(zajetoscPola(plansza,x-1,y-1)==1){
+            system("CLS");
+            rysujPlansze(plansza);
+            printf("Podane pole jest zajete, wprowadz dane ponownie!\n\n");
+            printf("Podaj kolumne: ");
+            scanf("%d",&x);
+            while(x>=4 || x<=0){
+            printf("Podano zla wartosc! Wprowadz numer kolumny ponownie: ");
+            scanf("%d", &x);
+            }
+
+            printf("Podaj linie: ");
+            scanf("%d",&y);
+
+            while(y>=4 || y<=0){
+                printf("Podano zla wartosc! Wprowadz numer linii ponownie: ");
+                scanf("%d", &y);
+            }
         }
 
         aktualizujPlansze(x-1, y-1, plansza, gracz);
@@ -49,15 +65,17 @@ int main(void)
         rysujPlansze(plansza);
         system("CLS");
 
-        wynik(plansza,gracz,&w);
-        if(w=='x'){
+        wynik(plansza, gracz, &w);
+        if(w=='x' || w=='o'){
             printf("Wygrywa %c",gracz);
             break;
         }
 
         if(sprawdzWolnePola(plansza)!=1){
+            printf("Brak pustych miejsc, zaden znak nie wygrywa.");
             break;
         }
+
         aktualnyGracz(&gracz);
 
     }while(1);
