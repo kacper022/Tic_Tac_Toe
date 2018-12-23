@@ -13,28 +13,47 @@ int main(void)
     char gracz;
     char winner;
     char rozpoczecie;
+    int tryb;
 
     zapelnij(plansza);
     printf("Wybierz znak ktorym chcesz zaczac (x lub o): ");
     scanf("%c", &gracz);
+    fflush(stdin);
+
+    printf("Czy chcesz zaczac gre jako pierwszy? (t lub n): ");
+    scanf("%c", &rozpoczecie);
+    fflush(stdin);
+
+    printf("Wybierz tryb gry\n1. 1-VS-1 \n2. 1-VS-AI\n");
+    scanf("%d", &tryb);
+    fflush(stdin);
+
+
     while(gracz!='x' && gracz!='o'){
         system("CLS");
         gracz=' ';
         printf("Podano zly znak! Wybierz symbol ponownie: ");
         scanf("%c", &gracz);
     }
-/*
+
     while(rozpoczecie!='t' && rozpoczecie!='n'){
-        printf("Czy chcesz zaczag gre jako pierwszy? T/N");
+        rozpoczecie=' ';
+        printf("Wpisano zly znak wyboru rozpoczecia kolejki! Wybierz ponownie: ");
         scanf("%c", &rozpoczecie);
     }
 
-    if(rozpoczecie == 'n'){
+    while(tryb !=1 && tryb !=2){
+        tryb=0;
+        printf("Wpisano zly znak wyboru trybu! Wybierz ponownie: ");
+        scanf("%d", &tryb);
+    }
+
+    if(rozpoczecie == 'n' && tryb == 2){
         aktualnyGracz(&gracz);
         pierwszyRuch(plansza, gracz);
         aktualnyGracz(&gracz);
     }
-*/
+
     system("CLS");
 
     do{
@@ -79,7 +98,6 @@ int main(void)
         system("CLS");
 
         wynik(plansza, gracz, &winner);
-
         if(winner=='x' || winner=='o'){
             printf("Wygrywa %c",gracz);
             break;
@@ -88,6 +106,22 @@ int main(void)
         if(sprawdzWolnePola(plansza)!=1){
             printf("Brak pustych miejsc, zaden znak nie wygrywa.");
             break;
+        }
+
+        if(tryb==2){
+            aktualnyGracz(&gracz);
+
+            wykonajRuch(plansza, gracz);
+
+            wynik(plansza, gracz, &winner);
+            if(winner=='x' || winner=='o'){
+                printf("Wygrywa %c",gracz);
+                break;
+            }
+            if(sprawdzWolnePola(plansza)!=1){
+                printf("Brak pustych miejsc, zaden znak nie wygrywa.");
+                break;
+            }
         }
 
         aktualnyGracz(&gracz);
