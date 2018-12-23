@@ -41,12 +41,7 @@ void wynik(char plansza[3][3], char gracz, char *result){
             wynik=1;
             *result=gracz;
             break;
-        } else{
-            for(i=0;i<3;i++){
-                for(j=0;j<3;j++){
-
-                }
-            }
         }
+        break;
     }
 }

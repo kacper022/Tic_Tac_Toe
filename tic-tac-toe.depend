@@ -1,25 +1,36 @@
 # depslib dependency file v1.0
-1545070103 source:c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\main.c
+1545603463 source:c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\main.c
 	<stdio.h>
 	<stdlib.h>
 	"tictactoe.h"
 	"warunkiWygranej.h"
+	"AI.h"
 
-1544566652 c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\tictactoe.h
+1545495885 c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\tictactoe.h
 	<stdio.h>
 	<stdlib.h>
 
-1545069537 source:c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\tictactoe.c
+1545495886 source:c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\tictactoe.c
 	<stdlib.h>
 	<stdio.h>
 	"tictactoe.h"
 
-1545070708 source:c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\warunkiwygranej.c
+1545603604 source:c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\warunkiwygranej.c
 	<stdio.h>
 	<stdlib.h>
 	"warunkiWygranej.h"
 
 1544975897 c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\warunkiwygranej.h
+	<stdio.h>
+	<stdlib.h>
+
+1545602554 source:c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\ai.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"AI.h"
+
+1545602550 c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\ai.h
 	<stdio.h>
 	<stdlib.h>
 

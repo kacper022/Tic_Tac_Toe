@@ -3,6 +3,7 @@
 
 #include "tictactoe.h"
 #include "warunkiWygranej.h"
+#include "AI.h"
 
 char plansza[3][3];
 
@@ -10,7 +11,8 @@ int main(void)
 {
     int x,y;
     char gracz;
-    char w;
+    char winner;
+    char rozpoczecie;
 
     zapelnij(plansza);
     printf("Wybierz znak ktorym chcesz zaczac (x lub o): ");
@@ -21,7 +23,18 @@ int main(void)
         printf("Podano zly znak! Wybierz symbol ponownie: ");
         scanf("%c", &gracz);
     }
+/*
+    while(rozpoczecie!='t' && rozpoczecie!='n'){
+        printf("Czy chcesz zaczag gre jako pierwszy? T/N");
+        scanf("%c", &rozpoczecie);
+    }
 
+    if(rozpoczecie == 'n'){
+        aktualnyGracz(&gracz);
+        pierwszyRuch(plansza, gracz);
+        aktualnyGracz(&gracz);
+    }
+*/
     system("CLS");
 
     do{
@@ -65,8 +78,9 @@ int main(void)
         rysujPlansze(plansza);
         system("CLS");
 
-        wynik(plansza, gracz, &w);
-        if(w=='x' || w=='o'){
+        wynik(plansza, gracz, &winner);
+
+        if(winner=='x' || winner=='o'){
             printf("Wygrywa %c",gracz);
             break;
         }
