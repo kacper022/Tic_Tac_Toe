@@ -14,6 +14,7 @@ int main(void)
     char winner;
     char rozpoczecie;
     int tryb;
+    int ktory_ruch=0;
 
     zapelnij(plansza);
     printf("Wybierz znak ktorym chcesz zaczac (x lub o): ");
@@ -28,7 +29,7 @@ int main(void)
     scanf("%d", &tryb);
     fflush(stdin);
 
-
+    /*   WARUNKI SPRAWDZAJACE POPRAWNOSC WPISANYCH DANYCH   */
     while(gracz!='x' && gracz!='o'){
         system("CLS");
         gracz=' ';
@@ -55,7 +56,8 @@ int main(void)
     }
 
     system("CLS");
-
+    blokPoziom(plansza, gracz);
+    /*  FUNKCJA URUCHAMIAJACA GRE   */
     do{
         rysujPlansze(plansza);
         printf("Aktualny znak: %c\n",gracz);
@@ -111,8 +113,14 @@ int main(void)
         if(tryb==2){
             aktualnyGracz(&gracz);
 
-            wykonajRuch(plansza, gracz);
-
+            if(ktory_ruch==0){
+                wykonajRuch(plansza, gracz);
+                ktory_ruch++;
+            }else {
+                if(blokPoziom(plansza,gracz)==0 && blokPion(plansza,gracz)==0){
+                    wykonajRuch(plansza,gracz);
+                }
+            }
             wynik(plansza, gracz, &winner);
             if(winner=='x' || winner=='o'){
                 printf("Wygrywa %c",gracz);
