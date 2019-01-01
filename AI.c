@@ -35,9 +35,10 @@ char przeciwnik(char znak){
         return 'x';
     }
 }
+                        /*  FUNKCJE ODPOWIADAJÄ„CE ZA BLOKOWANIE WYGRANYCH RUCHÃ“W GRACZA */
 
 int blokPoziom(char plansza[3][3], char znak_AI){
-    /*  DOAWARTEGO PONI¯EJ BLOKOWANIA DODAÆ PÊTLE SPRAWDZAJ¥C¥ MO¯LIWE KOMBINACJE ZAMIAST TYLU WARUNKÓW IF!!!   */
+    /*  DOAWARTEGO PONIÂ¯EJ BLOKOWANIA DODAÃ† PÃŠTLE SPRAWDZAJÂ¥CÂ¥ MOÂ¯LIWE KOMBINACJE ZAMIAST TYLU WARUNKÃ“W IF!!!   */
     /*  BLOKOWANIE W PIERWSZEJ LINII    */
     if(plansza[0][0]==przeciwnik(znak_AI)&&plansza[0][1]==przeciwnik(znak_AI)){
         if(zajetoscPola(plansza, 0, 2)!=1){
@@ -88,63 +89,101 @@ int blokPoziom(char plansza[3][3], char znak_AI){
     return 0;
 }
 
-
-/*
-[00][01][02]
-[10][11][12]
-[20][21][22]
-*/
 int blokPion(char plansza[3][3], char znak_AI){
     if(plansza[0][0]==przeciwnik(znak_AI)&&plansza[2][0]==przeciwnik(znak_AI)){
-        if(zajetoscPola(1,0)!=1){
+        if(zajetoscPola(plansza,1,0)!=1){
             aktualizujPlansze(1,0,plansza,znak_AI);
             return 1;
         }
     } else if(plansza[1][0]==przeciwnik(znak_AI)&&plansza[2][0]==przeciwnik(znak_AI)){
-        if(zajetoscPola(0,0)!=1){
+        if(zajetoscPola(plansza,0,0)!=1){
             aktualizujPlansze(0,0,plansza,znak_AI);
             return 1;
         }
     }else if(plansza[0][0]==przeciwnik(znak_AI)&&plansza[1][0]==przeciwnik(znak_AI)){
-        if(zajetoscPola(2,0)!=1){
+        if(zajetoscPola(plansza,2,0)!=1){
             aktualizujPlansze(2,0,plansza,znak_AI);
             return 1;
         }
     }else if(plansza[0][1]==przeciwnik(znak_AI)&&plansza[1][1]==przeciwnik(znak_AI)){
-        if(zajetoscPola(2,1)!=1){
+        if(zajetoscPola(plansza,2,1)!=1){
             aktualizujPlansze(2,1,plansza,znak_AI);
             return 1;
         }
     } else if(plansza[0][1]==przeciwnik(znak_AI)&&plansza[2][1]==przeciwnik(znak_AI)){
-        if(zajetoscPola(1,1)!=1){
+        if(zajetoscPola(plansza,1,1)!=1){
             aktualizujPlansze(1,1,plansza,znak_AI);
             return 1;
         }
     }else if(plansza[1][1]==przeciwnik(znak_AI)&&plansza[2][1]==przeciwnik(znak_AI)){
-        if(zajetoscPola(0,1)!=1){
+        if(zajetoscPola(plansza,0,1)!=1){
             aktualizujPlansze(0,1,plansza,znak_AI);
             return 1;
         }
     }else if(plansza[0][2]==przeciwnik(znak_AI)&&plansza[1][2]==przeciwnik(znak_AI)){
-        if(zajetoscPola(2,2)!=1){
+        if(zajetoscPola(plansza,2,2)!=1){
             aktualizujPlansze(2,2,plansza,znak_AI);
             return 1;
         }
     } else if(plansza[1][2]==przeciwnik(znak_AI)&&plansza[2][2]==przeciwnik(znak_AI)){
-        if(zajetoscPola(0,2)!=1){
+        if(zajetoscPola(plansza,0,2)!=1){
             aktualizujPlansze(0,2,plansza,znak_AI);
             return 1;
         }
     }else if(plansza[0][2]==przeciwnik(znak_AI)&&plansza[2][2]==przeciwnik(znak_AI)){
-        if(zajetoscPola(1,2)!=1){
+        if(zajetoscPola(plansza,1,2)!=1){
             aktualizujPlansze(1,2,plansza,znak_AI);
             return 1;
         }
     }
-    /*
-[00][01][02]
-[10][11][12]
-[20][21][22]
-*/
+    return 0;
+}
+
+int blokSkosy(char plansza[3][3], char znak_AI){
+    if(plansza[0][0]==przeciwnik(znak_AI)&&plansza[1][1]==przeciwnik(znak_AI)){
+        if(zajetoscPola(plansza,2,2)!=1){
+            aktualizujPlansze(2,2,plansza,znak_AI);
+            return 1;
+        } else if (plansza[1][1]==przeciwnik(znak_AI)&&plansza[2][2]==przeciwnik(znak_AI)){
+            if(zajetoscPola(plansza,0,0)!=1){
+                aktualizujPlansze(0,0,plansza,znak_AI);
+                return 1;
+            }
+        } else if(plansza[0][0]==przeciwnik(znak_AI)&&plansza[2][2]==przeciwnik(znak_AI)){
+            if(zajetoscPola(plansza,1,1)!=1){
+                aktualizujPlansze(1,1,plansza,znak_AI);
+                return 1;
+            }
+        } else if(plansza[0][2]==przeciwnik(znak_AI)&&plansza[1][1]==przeciwnik(znak_AI)){
+            if(zajetoscPola(plansza,2,0)!=1){
+                aktualizujPlansze(2,0,plansza,znak_AI);
+                return 1;
+            }
+        } else if(plansza[1][1]==przeciwnik(znak_AI)&&plansza[2][0]==przeciwnik(znak_AI)){
+            if(zajetoscPola(plansza,0,2)!=1){
+                aktualizujPlansze(0,2,plansza,znak_AI);
+            }
+        } else if(plansza[0][2]==przeciwnik(znak_AI)&&plansza[2][0]==przeciwnik(znak_AI)){
+            if(zajetoscPola(plansza,1,1)){
+                aktualizujPlansze(1,1,plansza,znak_AI);
+            }
+        }
+    }
+    return 0;
+}
+                        /*  FUNKCJE ODPOWIADAJACE ZA PRÃ“BÄ˜ WYGRANYCH RUCHÃ“W AI */
+
+int szukajPar(char plansza[3][3], char znak_AI){
+    if(plansza[0][0]==znak_AI&&plansza[0][1]==znak_AI){
+        if(zajetoscPola(plansza,0,2)!=1){
+            aktualizujPlansze(0,2,plansza,znak_AI);
+            return 1;
+        }
+    } else if(plansza[0][0]==znak_AI&&plansza[0][2]==znak_AI){
+        if(zajetoscPola(plansza,0,1)!=1){
+            aktualizujPlansze(0,1,plansza,znak_AI);
+            return 1;
+        }
+    }
     return 0;
 }

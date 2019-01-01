@@ -43,7 +43,7 @@ int main(void)
         scanf("%c", &rozpoczecie);
     }
 
-    while(tryb !=1 && tryb !=2){
+    while(tryb !=1 && tryb !=2 && tryb != 3){
         tryb=0;
         printf("Wpisano zly znak wyboru trybu! Wybierz ponownie: ");
         scanf("%d", &tryb);
@@ -73,24 +73,25 @@ int main(void)
             printf("Podano zla wartosc! Wprowadz numer linii ponownie: ");
             scanf("%d", &y);
         }
+        if(tryb != 3){
+            while(zajetoscPola(plansza,x-1,y-1)==1){
+                system("CLS");
+                rysujPlansze(plansza);
+                printf("Podane pole jest zajete, wprowadz dane ponownie!\n\n");
+                printf("Podaj kolumne: ");
+                scanf("%d",&x);
+                while(x>=4 || x<=0){
+                printf("Podano zla wartosc! Wprowadz numer kolumny ponownie: ");
+                scanf("%d", &x);
+                }
 
-        while(zajetoscPola(plansza,x-1,y-1)==1){
-            system("CLS");
-            rysujPlansze(plansza);
-            printf("Podane pole jest zajete, wprowadz dane ponownie!\n\n");
-            printf("Podaj kolumne: ");
-            scanf("%d",&x);
-            while(x>=4 || x<=0){
-            printf("Podano zla wartosc! Wprowadz numer kolumny ponownie: ");
-            scanf("%d", &x);
-            }
+                printf("Podaj linie: ");
+                scanf("%d",&y);
 
-            printf("Podaj linie: ");
-            scanf("%d",&y);
-
-            while(y>=4 || y<=0){
-                printf("Podano zla wartosc! Wprowadz numer linii ponownie: ");
-                scanf("%d", &y);
+                while(y>=4 || y<=0){
+                    printf("Podano zla wartosc! Wprowadz numer linii ponownie: ");
+                    scanf("%d", &y);
+                }
             }
         }
 
@@ -110,15 +111,17 @@ int main(void)
             break;
         }
 
-        if(tryb==2){
+        if(tryb==2 || tryb==3){
             aktualnyGracz(&gracz);
 
             if(ktory_ruch==0){
                 wykonajRuch(plansza, gracz);
                 ktory_ruch++;
             }else {
-                if(blokPoziom(plansza,gracz)==0 && blokPion(plansza,gracz)==0){
-                    wykonajRuch(plansza,gracz);
+                if(szukajPar(plansza,gracz)==0){
+                    if(blokPoziom(plansza,gracz)==0 && blokPion(plansza,gracz)==0 && blokSkosy(plansza,gracz)==0){
+                        wykonajRuch(plansza,gracz);
+                    }
                 }
             }
             wynik(plansza, gracz, &winner);

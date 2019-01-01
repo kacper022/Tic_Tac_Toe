@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1546195792 source:c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\main.c
+1546347207 source:c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\main.c
 	<stdio.h>
 	<stdlib.h>
 	"tictactoe.h"
@@ -24,7 +24,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1546197262 source:c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\ai.c
+1546347337 source:c:\users\kcpr5\desktop\c\c\codeblocks - projekty\tic-tac-toe\ai.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
