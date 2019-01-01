@@ -70,3 +70,13 @@ char wygrana(char plansza[3][3], const char gracz){
         return gracz;
     }
 }
+
+void ekranWygranej(char wygrany){
+    system("CLS");
+    printf("***********************\n");
+    printf("***********************\n");
+    printf("** WYGRYWA SYMBOL %c **\n",toupper(wygrany));
+    printf("***********************\n");
+    printf("***********************\n");
+
+}

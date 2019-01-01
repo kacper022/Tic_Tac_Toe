@@ -102,7 +102,7 @@ int main(void)
 
         wynik(plansza, gracz, &winner);
         if(winner=='x' || winner=='o'){
-            printf("Wygrywa %c",gracz);
+            ekranWygranej(gracz);
             break;
         }
 
@@ -126,7 +126,7 @@ int main(void)
             }
             wynik(plansza, gracz, &winner);
             if(winner=='x' || winner=='o'){
-                printf("Wygrywa %c",gracz);
+                ekranWygranej(gracz);
                 break;
             }
             if(sprawdzWolnePola(plansza)!=1){
